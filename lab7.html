@@ -1,0 +1,315 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Multiple Choice Question Paper</title> 
+    <style> 
+        button{ 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            margin: 0 auto; 
+        } 
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            color: #333; 
+            padding: 20px; 
+            margin: 0; 
+        } 
+ 
+        .container { 
+            max-width: 800px; 
+            margin: auto; 
+            background-color: #fff; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        } 
+ 
+        h1 { 
+            text-align: center; 
+            color: black; 
+        } 
+ 
+        .question { 
+            margin-bottom: 20px; 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            background-color:lightgreen ; 
+        } 
+ 
+        .question span { 
+            font-weight: bold; 
+            color: #000; 
+        } 
+ 
+        .options { 
+            margin-top: 10px; 
+        } 
+ 
+        .options label { 
+            display: block; 
+            margin-bottom: 5px; 
+            padding: 5px; 
+            border-radius: 4px; 
+            background-color: rgb(189, 234, 189); 
+        } 
+ 
+        .instructions { 
+            margin-bottom: 30px; 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            background-color: lightgreen; 
+        } 
+ 
+        .instructions p { 
+            margin: 0; 
+        } 
+ 
+        ul { 
+            margin-top: 10px; 
+            padding-left: 20px; 
+        } 
+ 
+        button { 
+            display: block; 
+            width: 100%; 
+            padding: 15px; 
+            font-size: 1.3em; 
+            background-color: rgb(189, 234, 189); 
+            color: #000000; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+        } 
+ 
+        button:hover { 
+            background-color: lightgreen; 
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+        } 
+ 
+        .dialog-box { 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            background-color: rgb(189, 234, 189); 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 10px; 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+            z-index: 1000; 
+        } 
+ 
+        .dialog-box h2 { 
+            margin-top: 0; 
+        } 
+ 
+        .dialog-box button { 
+            background-color: rgb(189, 234, 189); 
+            color: #000000; 
+            border: none; 
+            border-radius: 5px; 
+            padding: 10px; 
+            cursor: pointer; 
+            margin-top: 20px; 
+        } 
+ 
+        .dialog-box button:hover { 
+            background-color: lightgreen; 
+        } 
+ 
+        .overlay { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 999; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <div class="container"> 
+        <h1>Multiple Choice Question Paper</h1> 
+        <div class="instructions"> 
+            <p>Instructions:</p> 
+            <ul> 
+                <li>Select the best answer for each question.</li> 
+                <li>Each question has only one correct answer.</li> 
+            </ul> 
+        </div> 
+        <div class="question"> 
+            <span>1. What is the capital of France?</span> 
+            <div class="options"> 
+                <label><input type="radio" name="q1" value="A"> A. Berlin</label> 
+                <label><input type="radio" name="q1" value="B"> B. Madrid</label> 
+                <label><input type="radio" name="q1" value="C"> C. Paris</label> 
+                <label><input type="radio" name="q1" value="D"> D. Rome</label> 
+            </div> 
+        </div> 
+        <div class="question"> 
+            <span>2. What is the largest organ in the human body?</span> 
+            <div class="options"> 
+                <label><input type="radio" name="q10" value="A"> A. Heart</label> 
+                <label><input type="radio" name="q10" value="B"> B. Liver</label> 
+                <label><input type="radio" name="q10" value="C"> C. Skin</label> 
+                <label><input type="radio" name="q10" value="D"> D. Brain</label> 
+            </div> 
+        </div> 
+        <div class="question"> 
+            <span>3. Who painted the Mona Lisa?</span> 
+            <div class="options"> 
+                <label><input type="radio" name="q9" value="A"> A. Vincent van Gogh</label> 
+                <label><input type="radio" name="q9" value="B"> B. Leonardo da Vinci</label> 
+                <label><input type="radio" name="q9" value="C"> C. Pablo Picasso</label> 
+                <label><input type="radio" name="q9" value="D"> D. Claude Monet</label> 
+            </div> 
+        </div> 
+        <div class="question"> 
+            <span>4. What is the main ingredient in guacamole?</span> 
+            <div class="options"> 
+                <label><input type="radio" name="q7" value="A"> A. Tomato</label> 
+                <label><input type="radio" name="q7" value="B"> B. Avocado</label> 
+                <label><input type="radio" name="q7" value="C"> C. Onion</label> 
+                <label><input type="radio" name="q7" value="D"> D. Pepper</label> 
+            </div> 
+ 
+        </div> 
+        <div class="question"> 
+            <span>5. What is the hardest natural substance on Earth?</span> 
+            <div class="options"> 
+                <label><input type="radio" name="q8" value="A"> A. Gold</label> 
+                <label><input type="radio" name="q8" value="B"> B. Iron</label> 
+                <label><input type="radio" name="q8" value="C"> C. Diamond</label> 
+                <label><input type="radio" name="q8" value="D"> D. Quartz</label> 
+            </div> 
+        </div> 
+        <div class="question"> 
+            <span>6. What is the boiling point of water?</span> 
+            <div class="options"> 
+                <label><input type="radio" name="q6" value="A"> A. 0°C</label> 
+                <label><input type="radio" name="q6" value="B"> B. 50°C</label> 
+                <label><input type="radio" name="q6" value="C"> C. 100°C</label> 
+                <label><input type="radio" name="q6" value="D"> D. 150°C</label> 
+            </div> 
+ 
+        </div> 
+        <div class="question"> 
+            <span>7. What is the chemical symbol for Gold?</span> 
+            <div class="options"> 
+                <label><input type="radio" name="q7" value="A"> A. Au</label> 
+                <label><input type="radio" name="q7" value="B"> B. Ag</label> 
+                <label><input type="radio" name="q7" value="C"> C. Fe</label> 
+                <label><input type="radio" name="q7" value="D"> D. Pb</label> 
+            </div> 
+        </div> 
+        <div class="question"> 
+            <span>8. Which planet is known as the Red Planet?</span> 
+            <div class="options"> 
+                <label><input type="radio" name="q8" value="A"> A. Venus</label> 
+                <label><input type="radio" name="q8" value="B"> B. Mars</label> 
+                <label><input type="radio" name="q8" value="C"> C. Neptune</label> 
+                <label><input type="radio" name="q8" value="D"> D. Mercury</label> 
+            </div> 
+ 
+        </div> 
+        <div class="question"> 
+            <span>9. Who wrote "To Kill a Mockingbird"?</span> 
+            <div class="options"> 
+                <label><input type="radio" name="q9" value="A"> A. Harper Lee</label> 
+                <label><input type="radio" name="q9" value="B"> B. Mark Twain</label> 
+                <label><input type="radio" name="q9" value="C"> C. Ernest Hemingway</label> 
+                <label><input type="radio" name="q9" value="D"> D. F. Scott Fitzgerald</label> 
+            </div> 
+ 
+        </div> 
+        <div class="question"> 
+            <span>10. What is the largest planet in our solar system?</span> 
+            <div class="options"> 
+                <label><input type="radio" name="q10" value="A"> A. Earth</label> 
+                <label><input type="radio" name="q10" value="B"> B. Jupiter</label> 
+                <label><input type="radio" name="q10" value="C"> C. Mars</label> 
+                <label><input type="radio" name="q10" value="D"> D. Saturn</label> 
+            </div> 
+ 
+        </div> 
+        <button id="submit-btn" type="button">Submit</button> 
+    </div> 
+    <script> 
+        document.addEventListener('DOMContentLoaded', function() { 
+        const submitBtn = document.getElementById('submit-btn'); 
+        const correctAnswers = { 
+            q1: 'A', 
+            q2: 'C', 
+            q3: 'A', 
+            q4: 'B', 
+            q5: 'B', 
+            q6: 'B', 
+            q7: 'C', 
+            q8: 'A', 
+            q9: 'C', 
+            q10: 'B' 
+        }; 
+ 
+        submitBtn.addEventListener('click', () => { 
+            const answers = []; 
+            const questions = document.querySelectorAll('.question'); 
+            let score = 0; 
+ 
+            questions.forEach((question, index) => { 
+                const questionNum = 'q' + (index + 1); 
+                const selectedOption = question.querySelector('input[type="radio"]:checked'); 
+                if (selectedOption) { 
+                    const userAnswer = selectedOption.value; 
+                    answers.push({question: questionNum, answer: userAnswer}); 
+                    if (userAnswer === correctAnswers[questionNum]) { 
+                        score++; 
+                    } 
+                } else { 
+                    answers.push({question: questionNum, answer: 'No answer'}); 
+                } 
+            }); 
+ 
+            const overlay = document.createElement('div'); 
+            overlay.classList.add('overlay'); 
+            document.body.appendChild(overlay); 
+ 
+            const dialogueBox = document.createElement('div'); 
+            dialogueBox.classList.add('dialog-box'); 
+            dialogueBox.innerHTML = ` 
+                <h2>Results</h2> 
+                <p>Your answers:</p> 
+                <ul> 
+                    ${answers.map(({question, answer}) => { 
+                        const correct = correctAnswers[question] || 'N/A'; 
+                        const isCorrect = answer === correct ? ' (Correct)' : ` (Wrong, Correct answer: 
+${correct})`; 
+                        return <li>${question}: ${answer}${answer !== 'No answer' ? isCorrect : ''}</li>; 
+                    }).join('')} 
+                </ul> 
+                <p><strong>Your Score: ${score} / ${Object.keys(correctAnswers).length}</strong></p> 
+            `; 
+ 
+            const closeButton = document.createElement('button'); 
+            closeButton.textContent = 'Close'; 
+            closeButton.addEventListener('click', () => { 
+                document.body.removeChild(dialogueBox); 
+                document.body.removeChild(overlay); 
+            }); 
+ 
+            dialogueBox.appendChild(closeButton); 
+            document.body.appendChild(dialogueBox); 
+            }); 
+        }); 
+    </script> 
+</body> 
+</html>
